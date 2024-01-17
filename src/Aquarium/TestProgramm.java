@@ -3,8 +3,6 @@ package Aquarium;
 public class TestProgramm {
     public static void main(String[] args) throws InterruptedException{
 
-        Aquarium aquarium = new Aquarium(10, 7, 30);
-
         System.out.println("Test 1: Das Aquarium mit normalen Fischen");
         test_aquarium_mit_normalen_fischen();
 
