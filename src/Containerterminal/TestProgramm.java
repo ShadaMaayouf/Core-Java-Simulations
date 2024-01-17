@@ -4,48 +4,24 @@ import java.util.Scanner;
 
 public class TestProgramm {
     public static void main(String[] args) {
-        String[][] stacks = new String[][]{
+        String[][] stapel = new String[][]{
                 {"", "","^","",""},
                 {"", "","","",""},
                 {"","□","","",""},
                 {"□", "□","","□","□"},
                 {"□","□","□","□","□"},
         };
-        //test1(stacks);
-        test2(stacks);
+        test_menu_befehle(stapel);
     }
 
-    public static void test1(String [][] stacks){
-        // Erstellen Sie eine Instanz von ContainerTerminal
-
-        ContainerTerminal2 terminal = new ContainerTerminal2(stacks);
-
-        // Führen Sie einige Aktionen durch
-        terminal.printState();
-        terminal.moveCraneRight();
-        terminal.printState();
-        terminal.moveCraneRight();
-        terminal.printState();
-        terminal.pickUpContainer();
-        terminal.printState();
-        terminal.moveCraneLeft();
-        terminal.printState();
-        terminal.dropContainer();
-
-        // Geben Sie den Zustand des Terminals aus
-        terminal.printState();
-
-
-    }
-
-    public static void test2(String [][] stacks){
-        ContainerTerminal2 terminal = new ContainerTerminal2(stacks);
+    public static void test_menu_befehle(String [][] stacks){
+        ContainerTerminal terminal = new ContainerTerminal(stacks);
 
         Scanner scanner = new Scanner(System.in);
-        String command = "";
+        String kommando = "";
 
-        while (!command.equalsIgnoreCase("X")) {
-            terminal.printState();
+        while (!kommando.equalsIgnoreCase("X")) {
+            terminal.printZustand();
             System.out.println("Menü");
             System.out.println("W: Aufnehmen");
             System.out.println("A: Links");
@@ -53,20 +29,20 @@ public class TestProgramm {
             System.out.println("D: Rechts");
             System.out.println("X: Beenden");
             System.out.print("Befehl: ");
-            command = scanner.nextLine();
+            kommando = scanner.nextLine();
 
-            switch (command.toUpperCase()) {
+            switch (kommando.toUpperCase()) {
                 case "W":
-                    terminal.pickUpContainer();
+                    terminal.container_aufnehmen();
                     break;
                 case "A":
-                    terminal.moveCraneLeft();
+                    terminal.kran_nach_links();
                     break;
                 case "S":
-                    terminal.dropContainer();
+                    terminal.Container_ablegen();
                     break;
                 case "D":
-                    terminal.moveCraneRight();
+                    terminal.kran_nach_rechts();
                     break;
             }
         }

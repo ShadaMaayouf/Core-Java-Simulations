@@ -1,7 +1,7 @@
 package Aquarium;
 
 public class TestProgramm {
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args) throws InterruptedException {
 
         System.out.println("Test 1: Das Aquarium mit normalen Fischen");
         test_aquarium_mit_normalen_fischen();
@@ -14,19 +14,24 @@ public class TestProgramm {
 
     private static void test_aquarium_mit_normalen_fischen() throws InterruptedException {
 
+        //Aquarium erstellen
         Aquarium aquarium = new Aquarium(10, 7, 30);
 
+        //Fische erstellen
         Fisch fisch1 = new Fisch(0, "><>");
         Fisch fisch2 = new Fisch(1, "<><");
         Fisch fisch3 = new Fisch(2, "><>");
 
+        //Fische zum Aquarium hinzufügen
         aquarium.addFisch(fisch1);
         aquarium.addFisch(fisch2);
         aquarium.addFisch(fisch3);
 
+        //erster Zustand zeigen
         aquarium.printZustand();
         System.out.println();
 
+        //Iteration: wir lasssen die Fische schwimmen und zeigen den Zustand für 10 mal
         for (int i = 0; i < 10; i++) {
             aquarium.nextZustand();
             aquarium.printZustand();
