@@ -14,7 +14,7 @@ public class TestProgramm {
         try {
             rennen.start_race();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("Das Rennen wurde unterbrochen.");
         }
     }
 
@@ -23,7 +23,7 @@ public class TestProgramm {
         try {
             rennen.start_race();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("Das Rennen wurde unterbrochen.");
         }
     }
 }
