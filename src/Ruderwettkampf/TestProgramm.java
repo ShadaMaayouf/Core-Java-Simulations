@@ -2,7 +2,7 @@ package Ruderwettkampf;
 
 
 public class TestProgramm {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         
         test_rennen_3_doppelzweier_distanz2000();
         test_rennen_4_Vierer_distanz4000();
