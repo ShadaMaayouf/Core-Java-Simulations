@@ -80,15 +80,15 @@ public class ContainerTerminal {
     }
 
     public int checkContainer(){ //sucht den obersten container im Stapel direkt untern Kran.
-        int i = container_im_kran ? 2 : 1; //wenn der Kran ein Container hat, ist dieser in Zeile 1, direkt unter dem Container --> wir suchen in der Zeile danach Zeile 2
+        //int i = 2; //wenn der Kran ein Container hat, ist dieser in Zeile 1, direkt unter dem Container --> wir suchen in der Zeile danach Zeile 2
 
-        for (;i< stapel[0].length; i++){
+        for (int i =2; i< stapel[0].length; i++){
             if(stapel[i][kran_position].equals("□")){
                 System.out.println("container index ist "+i);
                 return i;
             }
         }
-        return 5;
+        return -1;
     }
 
     public void Container_ablegen() {
