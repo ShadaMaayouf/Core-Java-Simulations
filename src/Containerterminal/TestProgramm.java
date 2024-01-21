@@ -27,7 +27,7 @@ in den restlichen Zeile des Arrays stapeln sich die Container.
 public class TestProgramm {
     public static void main(String[] args) {
 
-        String[][] stapel = new String[][]{
+        String[][] container_stapel = new String[][]{
                 {"", "","^","",""}, //Kran ist immer im stapel[i++][j]
                 {"", "","","",""},
                 {"","□","","",""}, //stapel[2][1]
@@ -35,11 +35,11 @@ public class TestProgramm {
                 {"□","□","□","□","□"}
         };
 
-        test_menu_befehle(stapel);
+        test_menu_befehle(container_stapel);
     }
 
-    public static void test_menu_befehle(String [][] stacks){
-        ContainerTerminal terminal = new ContainerTerminal(stacks);
+    public static void test_menu_befehle(String [][] container_stapel){
+        ContainerTerminal terminal = new ContainerTerminal(container_stapel);
 
         Scanner scanner = new Scanner(System.in);
         String kommando = "";
